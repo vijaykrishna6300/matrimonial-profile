@@ -12,11 +12,17 @@
             margin: 0;
             padding: 0;
         }
+        
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
         body {
             background-color: #f0f2f5; 
             font-family: 'Poppins', sans-serif;
             color: #333;
         }
+        
         .profile-container {
             width: 100%;
             max-width: 500px;
@@ -33,11 +39,12 @@
             text-align: center;
             background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
             color: white;
+            padding-bottom: 20px;
         }
         .hero-image-wrapper {
             width: 100%;
             height: 55vh;
-            min-height: 450px;
+            min-height: 400px;
         }
         .hero-image-wrapper img {
             width: 100%;
@@ -49,7 +56,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         .hero-text {
-            padding: 25px 20px 35px;
+            padding: 25px 20px 10px;
         }
         .hero-text h1 {
             font-family: 'Playfair Display', serif;
@@ -58,19 +65,29 @@
             color: #ffffff;
             letter-spacing: 1px;
         }
-        .quote {
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 20px;
             font-size: 14px;
-            font-style: italic;
-            font-weight: 300;
-            line-height: 1.6;
-            opacity: 0.9;
-            padding: 0 15px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
-        .quote::before, .quote::after {
-            content: '"';
-            font-size: 18px;
+
+        /* Animated Scroll Indicator */
+        .scroll-indicator {
+            margin-top: 15px;
+            font-size: 24px;
+            animation: bounce 2s infinite;
             color: #f1c40f;
-            font-family: serif;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         /* Standard Section Styling */
@@ -95,11 +112,11 @@
             padding-bottom: 5px;
         }
 
-        /* Detail Grids (Makes it look like a neat form/table) */
+        /* Detail Grids */
         .detail-grid {
             display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 12px 15px;
+            grid-template-columns: 130px 1fr;
+            gap: 12px 10px;
             font-size: 15px;
             line-height: 1.5;
         }
@@ -123,7 +140,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Partner Preference Card */
+        /* Highlight Cards */
         .preference-card {
             background: #fdfbf7;
             border: 1px solid #e8dcc4;
@@ -131,8 +148,6 @@
             padding: 20px;
             margin-top: 10px;
         }
-
-        /* Contact Details Highlight */
         .contact-box {
             background: #1a2980;
             color: white;
@@ -140,24 +155,8 @@
             padding: 25px;
             margin-top: 15px;
         }
-        .contact-box .detail-label {
-            color: #a8b8ff;
-        }
-        .contact-box .detail-value {
-            color: #ffffff;
-        }
-
-        /* Badges */
-        .badge {
-            display: inline-block;
-            background: #e8f0fe;
-            color: #1a73e8;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
+        .contact-box .detail-label { color: #a8b8ff; }
+        .contact-box .detail-value { color: #ffffff; }
 
         .fade-in {
             animation: fadeIn 1s ease-in;
@@ -172,7 +171,6 @@
 
     <div class="profile-container fade-in">
         
-        <!-- Hero Section -->
         <div class="hero-section">
             <div class="hero-image-wrapper">
                 <img src="IMG_20240223_131556.jpg" alt="Vijay Krishna">
@@ -180,18 +178,18 @@
             <div class="hero-text">
                 <h1>Nanda Venkata<br>Vijay Krishna</h1>
                 <div class="badge">Matrimonial Profile</div>
-                <p class="quote">Looking for a well-educated, family-oriented, caring, and understanding life partner with good values and mutual respect.</p>
+                <p style="font-size: 14px; opacity: 0.9;">"Looking for a well-educated, family-oriented, caring, and understanding life partner with good values and mutual respect."</p>
+                <div class="scroll-indicator">↓</div>
             </div>
         </div>
 
-        <!-- Personal Details Section -->
         <div class="section">
             <div class="section-header">
                 <h2>✨ Personal Details</h2>
             </div>
             <div class="detail-grid">
                 <div class="detail-label">Date of Birth</div>
-                <div class="detail-value">[DD-MM-YYYY]</div>
+                <div class="detail-value">[Add DOB]</div>
                 
                 <div class="detail-label">Age</div>
                 <div class="detail-value">[Add Age] Years</div>
@@ -206,7 +204,7 @@
                 <div class="detail-value">[Add Religion / Caste]</div>
                 
                 <div class="detail-label">Mother Tongue</div>
-                <div class="detail-value">[Add Language]</div>
+                <div class="detail-value">[Add Mother Tongue]</div>
                 
                 <div class="detail-label">Gotram</div>
                 <div class="detail-value">[Add Gotram]</div>
@@ -219,14 +217,13 @@
             </div>
         </div>
 
-        <!-- Education & Career Section -->
         <div class="section">
             <img src="IMG_20240207_082729.jpg" alt="Professional Life" class="section-image">
             <div class="section-header">
-                <h2>🎓 Education & Profession</h2>
+                <h2>🎓 Professional Details</h2>
             </div>
             <div class="detail-grid">
-                <div class="detail-label">Qualification</div>
+                <div class="detail-label">Education</div>
                 <div class="detail-value">M.Tech (Machine Design) & B.Tech (Mechanical)</div>
                 
                 <div class="detail-label">Occupation</div>
@@ -237,32 +234,28 @@
                 
                 <div class="detail-label">Work Location</div>
                 <div class="detail-value">Hyderabad</div>
-                
-                <div class="detail-label">Experience</div>
-                <div class="detail-value">2.5+ Years</div>
 
                 <div class="detail-label">Annual Income</div>
                 <div class="detail-value">[Add Income Details]</div>
             </div>
         </div>
 
-        <!-- Family & Lifestyle Section -->
         <div class="section">
             <img src="IMG_20240101_113414.jpg" alt="Family Background" class="section-image">
             <div class="section-header">
-                <h2>👨‍👩‍👧‍👦 Family & Lifestyle</h2>
+                <h2>👨‍👩‍👧‍👦 Family & Personal Info</h2>
             </div>
             <div class="detail-grid">
                 <div class="detail-label">Father's Name</div>
                 <div class="detail-value">[Add Father's Name]</div>
                 
-                <div class="detail-label">Occupation</div>
+                <div class="detail-label">Father's Occ.</div>
                 <div class="detail-value">[Add Father's Occupation]</div>
                 
                 <div class="detail-label">Mother's Name</div>
                 <div class="detail-value">[Add Mother's Name]</div>
                 
-                <div class="detail-label">Occupation</div>
+                <div class="detail-label">Mother's Occ.</div>
                 <div class="detail-value">[Add Mother's Occupation]</div>
                 
                 <div class="detail-label">Siblings</div>
@@ -285,7 +278,6 @@
             </div>
         </div>
 
-        <!-- Partner Preference Section -->
         <div class="section">
             <div class="section-header">
                 <h2>💝 Partner Preference</h2>
@@ -298,14 +290,13 @@
                 <div class="detail-value">[Add Educational Preference]</div>
 
                 <div class="detail-label">Profession</div>
-                <div class="detail-value">[Add Profession Preference / Open]</div>
+                <div class="detail-value">[Add Profession Preference]</div>
                 
                 <div class="detail-label">Expectations</div>
                 <div class="detail-value">[Add any other specific expectations]</div>
             </div>
         </div>
 
-        <!-- Contact Section -->
         <div class="section">
             <div class="section-header">
                 <h2>📞 Contact Details</h2>
@@ -314,11 +305,8 @@
                 <div class="detail-label">Contact Person</div>
                 <div class="detail-value">[Add Contact Person Name]</div>
                 
-                <div class="detail-label">Mobile Number</div>
+                <div class="detail-label">Mobile</div>
                 <div class="detail-value">9618611383</div>
-
-                <div class="detail-label">Email Address</div>
-                <div class="detail-value">vijaykrishna6300@gmail.com</div>
                 
                 <div class="detail-label">Address</div>
                 <div class="detail-value">[Add Full Residential Address]</div>
