@@ -4,316 +4,385 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrimonial Profile | Nanda Venkata Vijay Krishna</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html {
-            scroll-behavior: smooth; /* Enables smooth scrolling */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        body {
-            background-color: #f0f2f5; 
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-        }
-        
-        .profile-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            background: #ffffff;
-            min-height: 100vh;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow-x: hidden;
+        html{
+            scroll-behavior:smooth;
         }
 
-        /* Header / Hero Section */
-        .hero-section {
-            position: relative;
-            text-align: center;
-            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
-            color: white;
-            padding-bottom: 20px;
-        }
-        .hero-image-wrapper {
-            width: 100%;
-            height: 55vh;
-            min-height: 400px;
-        }
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .hero-text {
-            padding: 25px 20px 10px;
-        }
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+        body{
+            background:#f2f5f9;
+            font-family:'Poppins',sans-serif;
+            color:#333;
         }
 
-        /* Animated Scroll Indicator */
-        .scroll-indicator {
-            margin-top: 15px;
-            font-size: 24px;
-            animation: bounce 2s infinite;
-            color: #f1c40f;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .container{
+            max-width:500px;
+            margin:auto;
+            background:#fff;
+            min-height:100vh;
+            box-shadow:0 5px 25px rgba(0,0,0,0.15);
         }
 
-        /* Standard Section Styling */
-        .section {
-            padding: 35px 25px;
-            border-bottom: 8px solid #f0f2f5;
-        }
-        .section:last-child {
-            border-bottom: none;
-            padding-bottom: 50px;
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: #1a2980;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 5px;
+        /* HERO SECTION */
+
+        .hero{
+            background:linear-gradient(135deg,#0f4c81,#26d0ce);
+            color:#fff;
+            text-align:center;
+            padding-bottom:25px;
         }
 
-        /* Detail Grids */
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            gap: 12px 10px;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .detail-label {
-            font-weight: 600;
-            color: #555;
-        }
-        .detail-value {
-            color: #222;
-            font-weight: 400;
+        .hero img{
+            width:100%;
+            height:500px;
+            object-fit:cover;
+            object-position:top;
+            border-bottom-left-radius:30px;
+            border-bottom-right-radius:30px;
         }
 
-        /* Secondary Images */
-        .section-image {
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            object-fit: cover;
-            object-position: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        .hero h1{
+            font-family:'Playfair Display',serif;
+            font-size:32px;
+            margin-top:25px;
         }
 
-        /* Highlight Cards */
-        .preference-card {
-            background: #fdfbf7;
-            border: 1px solid #e8dcc4;
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 10px;
+        .badge{
+            display:inline-block;
+            margin-top:15px;
+            padding:8px 18px;
+            border-radius:25px;
+            background:rgba(255,255,255,0.2);
+            border:1px solid rgba(255,255,255,0.4);
         }
-        .contact-box {
-            background: #1a2980;
-            color: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 15px;
-        }
-        .contact-box .detail-label { color: #a8b8ff; }
-        .contact-box .detail-value { color: #ffffff; }
 
-        .fade-in {
-            animation: fadeIn 1s ease-in;
+        .hero p{
+            margin:20px;
+            font-size:14px;
+            line-height:1.8;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .scroll{
+            font-size:28px;
+            animation:bounce 2s infinite;
+            color:#ffd700;
+        }
+
+        @keyframes bounce{
+            0%,20%,50%,80%,100%{transform:translateY(0);}
+            40%{transform:translateY(-10px);}
+            60%{transform:translateY(-5px);}
+        }
+
+        /* SECTIONS */
+
+        .section{
+            padding:35px 25px;
+            border-bottom:8px solid #f2f5f9;
+        }
+
+        .section h2{
+            color:#0f4c81;
+            font-family:'Playfair Display',serif;
+            margin-bottom:25px;
+            border-bottom:2px solid goldenrod;
+            padding-bottom:8px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:130px 1fr;
+            gap:15px 10px;
+        }
+
+        .label{
+            font-weight:600;
+            color:#555;
+        }
+
+        .value{
+            color:#222;
+        }
+
+        .card{
+            background:#faf7f0;
+            border-radius:15px;
+            padding:20px;
+            border:1px solid #ece2c6;
+        }
+
+        .contact{
+            background:#0f4c81;
+            color:white;
+            border-radius:15px;
+            padding:20px;
+        }
+
+        .contact .label{
+            color:#b6d3ff;
+        }
+
+        .contact .value{
+            color:white;
+        }
+
+        .footer{
+            text-align:center;
+            padding:30px;
+            color:#777;
+            font-size:14px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="profile-container fade-in">
-        
-        <div class="hero-section">
-            <div class="hero-image-wrapper">
-                <img src="IMG_20240223_131556.jpg" alt="Vijay Krishna">
-            </div>
-            <div class="hero-text">
-                <h1>Nanda Venkata<br>Vijay Krishna</h1>
-                <div class="badge">Matrimonial Profile</div>
-                <p style="font-size: 14px; opacity: 0.9;">"Looking for a well-educated, family-oriented, caring, and understanding life partner with good values and mutual respect."</p>
-                <div class="scroll-indicator">↓</div>
-            </div>
+<div class="container">
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <!-- Replace image path -->
+        <img src="your-photo.jpg" alt="Vijay Krishna">
+
+        <h1>Nanda Venkata<br>Vijay Krishna</h1>
+
+        <div class="badge">
+            Matrimonial Profile
         </div>
 
-        <div class="section">
-            <div class="section-header">
-                <h2>✨ Personal Details</h2>
-            </div>
-            <div class="detail-grid">
-                <div class="detail-label">Date of Birth</div>
-                <div class="detail-value">[Add DOB]</div>
-                
-                <div class="detail-label">Age</div>
-                <div class="detail-value">[Add Age] Years</div>
-                
-                <div class="detail-label">Height</div>
-                <div class="detail-value">[Add Height]</div>
-                
-                <div class="detail-label">Weight</div>
-                <div class="detail-value">[Add Weight]</div>
-                
-                <div class="detail-label">Religion/Caste</div>
-                <div class="detail-value">[Add Religion / Caste]</div>
-                
-                <div class="detail-label">Mother Tongue</div>
-                <div class="detail-value">[Add Mother Tongue]</div>
-                
-                <div class="detail-label">Gotram</div>
-                <div class="detail-value">[Add Gotram]</div>
+        <p>
+            SAP Basis & Security Operations Consultant at Accenture |
+            M.Tech Graduate | Hyderabad | Family-Oriented &
+            Career-Focused
+        </p>
 
-                <div class="detail-label">Rasi/Nakshatram</div>
-                <div class="detail-value">[Add Rasi / Nakshatram]</div>
-                
-                <div class="detail-label">Marital Status</div>
-                <div class="detail-value">Never Married</div>
-            </div>
+        <p>
+            "Looking for a well-educated, family-oriented, caring,
+            understanding life partner with good values and mutual respect."
+        </p>
+
+        <div class="scroll">↓</div>
+
+    </div>
+
+    <!-- PERSONAL DETAILS -->
+
+    <div class="section">
+
+        <h2>✨ Personal Details</h2>
+
+        <div class="grid">
+
+            <div class="label">Date of Birth</div>
+            <div class="value">09 June 2001</div>
+
+            <div class="label">Age</div>
+            <div class="value">25 Years</div>
+
+            <div class="label">Height</div>
+            <div class="value">171 cm</div>
+
+            <div class="label">Weight</div>
+            <div class="value">90 Kg</div>
+
+            <div class="label">Religion/Caste</div>
+            <div class="value">Hindu - Kapu (OC)</div>
+
+            <div class="label">Mother Tongue</div>
+            <div class="value">Telugu</div>
+
+            <div class="label">Gotram</div>
+            <div class="value">Nagula Gotram</div>
+
+            <div class="label">Rasi/Nakshatram</div>
+            <div class="value">Makara Rashi & Utrashada 3rd Paadham</div>
+
+            <div class="label">Marital Status</div>
+            <div class="value">Never Married</div>
+
         </div>
+    </div>
 
-        <div class="section">
-            <img src="IMG_20240207_082729.jpg" alt="Professional Life" class="section-image">
-            <div class="section-header">
-                <h2>🎓 Professional Details</h2>
-            </div>
-            <div class="detail-grid">
-                <div class="detail-label">Education</div>
-                <div class="detail-value">M.Tech (Machine Design) & B.Tech (Mechanical)</div>
-                
-                <div class="detail-label">Occupation</div>
-                <div class="detail-value">SAP Basis & Security Operations Consultant</div>
-                
-                <div class="detail-label">Company</div>
-                <div class="detail-value">Accenture</div>
-                
-                <div class="detail-label">Work Location</div>
-                <div class="detail-value">Hyderabad</div>
+    <!-- EDUCATION & PROFESSION -->
 
-                <div class="detail-label">Annual Income</div>
-                <div class="detail-value">[Add Income Details]</div>
+    <div class="section">
+
+        <h2>🎓 Professional Details</h2>
+
+        <div class="grid">
+
+            <div class="label">Education</div>
+            <div class="value">
+                M.Tech (Machine Design)<br>
+                B.Tech (Mechanical Engineering)
             </div>
+
+            <div class="label">Occupation</div>
+            <div class="value">
+                SAP Basis & Security Operations Consultant
+            </div>
+
+            <div class="label">Company</div>
+            <div class="value">Accenture</div>
+
+            <div class="label">Work Location</div>
+            <div class="value">Hyderabad, Telangana</div>
+
+            <div class="label">Annual Income</div>
+            <div class="value">₹5.2 Lakhs Per Annum</div>
+
         </div>
+    </div>
 
-        <div class="section">
-            <img src="IMG_20240101_113414.jpg" alt="Family Background" class="section-image">
-            <div class="section-header">
-                <h2>👨‍👩‍👧‍👦 Family & Personal Info</h2>
+    <!-- FAMILY -->
+
+    <div class="section">
+
+        <h2>👨‍👩‍👦 Family Details</h2>
+
+        <div class="grid">
+
+            <div class="label">Father</div>
+            <div class="value">
+                Nanda Naga Madan Mohan<br>
+                <small>(Occupation: Add Here)</small>
             </div>
-            <div class="detail-grid">
-                <div class="detail-label">Father's Name</div>
-                <div class="detail-value">[Add Father's Name]</div>
-                
-                <div class="detail-label">Father's Occ.</div>
-                <div class="detail-value">[Add Father's Occupation]</div>
-                
-                <div class="detail-label">Mother's Name</div>
-                <div class="detail-value">[Add Mother's Name]</div>
-                
-                <div class="detail-label">Mother's Occ.</div>
-                <div class="detail-value">[Add Mother's Occupation]</div>
-                
-                <div class="detail-label">Siblings</div>
-                <div class="detail-value">[Add Sibling Details]</div>
-                
-                <div class="detail-label">Family Type</div>
-                <div class="detail-value">[Joint / Nuclear]</div>
-                
-                <div class="detail-label" style="margin-top: 15px; color: #1a2980;"><strong>Lifestyle</strong></div>
-                <div></div>
 
-                <div class="detail-label">Food Habits</div>
-                <div class="detail-value">[Vegetarian / Non-Vegetarian]</div>
-
-                <div class="detail-label">Hobbies</div>
-                <div class="detail-value">[Add Hobbies & Interests]</div>
-
-                <div class="detail-label">Languages</div>
-                <div class="detail-value">[Add Languages Known]</div>
+            <div class="label">Mother</div>
+            <div class="value">
+                Nanda Venkata Suhasini<br>
+                <small>(Occupation: Add Here)</small>
             </div>
-        </div>
 
-        <div class="section">
-            <div class="section-header">
-                <h2>💝 Partner Preference</h2>
+            <div class="label">Siblings</div>
+            <div class="value">
+                One Younger Brother
             </div>
-            <div class="preference-card detail-grid">
-                <div class="detail-label">Preferred Age</div>
-                <div class="detail-value">[Add Age Range]</div>
-                
-                <div class="detail-label">Education</div>
-                <div class="detail-value">[Add Educational Preference]</div>
 
-                <div class="detail-label">Profession</div>
-                <div class="detail-value">[Add Profession Preference]</div>
-                
-                <div class="detail-label">Expectations</div>
-                <div class="detail-value">[Add any other specific expectations]</div>
+            <div class="label">Family Type</div>
+            <div class="value">
+                Nuclear Family
             </div>
-        </div>
 
-        <div class="section">
-            <div class="section-header">
-                <h2>📞 Contact Details</h2>
-            </div>
-            <div class="contact-box detail-grid">
-                <div class="detail-label">Contact Person</div>
-                <div class="detail-value">[Add Contact Person Name]</div>
-                
-                <div class="detail-label">Mobile</div>
-                <div class="detail-value">9618611383</div>
-                
-                <div class="detail-label">Address</div>
-                <div class="detail-value">[Add Full Residential Address]</div>
-            </div>
         </div>
 
     </div>
+
+    <!-- PERSONAL INFO -->
+
+    <div class="section">
+
+        <h2>🌟 Personal Information</h2>
+
+        <div class="grid">
+
+            <div class="label">Food Habits</div>
+            <div class="value">Non-Vegetarian</div>
+
+            <div class="label">Hobbies</div>
+            <div class="value">
+                Technology, Travelling, Fitness,
+                Reading, Learning New Technologies
+            </div>
+
+            <div class="label">Languages</div>
+            <div class="value">
+                Telugu, English, Hindi
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PARTNER PREFERENCE -->
+
+    <div class="section">
+
+        <h2>💝 Partner Preference</h2>
+
+        <div class="card">
+
+            <div class="grid">
+
+                <div class="label">Preferred Age</div>
+                <div class="value">22 - 27 Years</div>
+
+                <div class="label">Education</div>
+                <div class="value">
+                    Graduate / Post Graduate
+                </div>
+
+                <div class="label">Profession</div>
+                <div class="value">
+                    IT, Engineering, Healthcare,
+                    Government or Similar Fields
+                </div>
+
+                <div class="label">Expectations</div>
+                <div class="value">
+                    Looking for a caring, family-oriented,
+                    understanding and supportive life partner
+                    with good values, mutual respect and
+                    strong family bonding.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="section">
+
+        <h2>📞 Contact Details</h2>
+
+        <div class="contact">
+
+            <div class="grid">
+
+                <div class="label">Contact Person</div>
+                <div class="value">
+                    Nanda Naga Madan Mohan
+                </div>
+
+                <div class="label">Mobile</div>
+                <div class="value">
+                    +91 9618611383
+                </div>
+
+                <div class="label">Address</div>
+                <div class="value">
+                    10-29, Indira Nilayam,<br>
+                    Ambika Factory Street,<br>
+                    Pedapadu - 534437,<br>
+                    West Godavari (Eluru) District,<br>
+                    Andhra Pradesh, India.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Designed with ❤️ for Matrimonial Purpose
+    </div>
+
+</div>
 
 </body>
 </html>
