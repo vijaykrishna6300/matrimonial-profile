@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimonial Profile | Nanda Venkata Vijay Krishna</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Mobile container to simulate a phone screen */
+        .slider-container {
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            max-height: 850px;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            position: relative;
+        }
+        /* Image formatting */
+        .slide-img-container {
+            height: 50%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #eee;
+        }
+        .slide-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        /* Content formatting */
+        .slide-content {
+            padding: 30px 25px;
+            height: 50%;
+            overflow-y: auto;
+            background: linear-gradient(to bottom, #ffffff, #fdfbf7);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 2px solid #e0b976;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        p, li {
+            color: #555;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li strong {
+            color: #333;
+        }
+        /* Navigation Buttons */
+        .nav-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 25px;
+            z-index: 10;
+        }
+        button {
+            background-color: #e0b976;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #cda35f;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        /* Slide Indicators */
+        .indicators {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        .dot {
+            width: 30px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        .dot.active {
+            background: #e0b976;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="indicators">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="slides" id="slideTrack">
+            <div class="slide">
+                <div class="slide-img-container">
+                    <img src="IMG_20240207_082729.jpg" alt="Vijay Krishna">
+                </div>
+                <div class="slide-content">
+                    <h2>Matrimonial Profile</h2>
+                    <p><strong>NANDA VENKATA VIJAY KRISHNA</strong></p>
+                    <p>Welcome to my profile. I am a dedicated professional based in Hyderabad, looking for a compatible life partner.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-img-container">
+                    <img src="IMG_20240101_113414.jpg" alt="Family Background">
+                </div>
+                <div class="slide-content">
+                    <h2>Personal & Family</h2>
+                    <ul>
+                        <li><strong>Date of Birth:</strong> [Add DOB]</li>
+                        <li><strong>Height:</strong> [Add Height]</li>
+                        <li><strong>Caste / Sub-caste:</strong> [Add Caste]</li>
+                        <li><strong>Gotram:</strong> [Add Gotram]</li>
+                        <li><strong>Star (Nakshatra):</strong> [Add Star]</li>
+                        <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+                        <li><strong>Father:</strong> [Add Father's Name & Occupation]</li>
+                        <li><strong>Mother:</strong> [Add Mother's Name & Occupation]</li>
+                        <li><strong>Siblings:</strong> [Add Sibling Details]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-img-container">
+                    <img src="IMG_20240223_131556.jpg" alt="Professional Life">
+                </div>
+                <div class="slide-content">
+                    <h2>Education & Career</h2>
+                    <ul>
+                        <li><strong>Profession:</strong> SAP Basis & Security Operations Consultant [cite: 1]</li>
+                        <li><strong>Company:</strong> Accenture [cite: 8]</li>
+                        <li><strong>Location:</strong> Hyderabad [cite: 1]</li>
+                        <li><strong>Experience:</strong> 2.5+ Years [cite: 1]</li>
+                        <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+                        <li><strong>Post-Graduation:</strong> M.Tech Machine Design (2022-2024) [cite: 19]</li>
+                        <li><strong>Graduation:</strong> B.Tech Mechanical Engineering (2018-2022) [cite: 20]</li>
+                        <li><strong>College:</strong> Ramachandra College of Engineering [cite: 19, 20]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-img-container">
+                    <img src="IMG_20240207_052456.jpg" alt="Contact">
+                </div>
+                <div class="slide-content">
+                    <h2>Let's Connect</h2>
+                    <p>If our profiles align, we would be happy to take things forward.</p>
+                    <ul>
+                        <li><strong>Phone:</strong> 9618611383 [cite: 1]</li>
+                        <li><strong>Email:</strong> vijaykrishna6300@gmail.com [cite: 1]</li>
+                        <li><strong>LinkedIn:</strong> linkedin.com/in/nanda-vijay-krishna [cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="prevBtn" onclick="moveSlide(-1)" disabled>Back</button>
+            <button id="nextBtn" onclick="moveSlide(1)">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        const track = document.getElementById('slideTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            
+            // Boundary checks
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+
+            // Apply sliding animation
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update Buttons
+            prevBtn.disabled = currentSlide === 0;
+            
+            // If on the last slide, hide next button
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'block';
+            }
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
